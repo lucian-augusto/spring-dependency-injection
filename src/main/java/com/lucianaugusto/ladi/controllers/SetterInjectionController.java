@@ -1,6 +1,7 @@
 package com.lucianaugusto.ladi.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 import com.lucianaugusto.ladi.services.GreetingService;
@@ -10,6 +11,7 @@ public class SetterInjectionController {
 
 	private GreetingService greetingService;
 	
+	@Qualifier("setterInjectedGreetingService")
 	@Autowired
 	public void setGreetingService(GreetingService greetingService) {
 		this.greetingService = greetingService;
