@@ -3,7 +3,7 @@ package com.lucianaugusto.ladi.controllers;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
-import com.lucianaugusto.ladi.services.PetService;
+import com.services.PetService;
 
 @Controller
 public class PetController {

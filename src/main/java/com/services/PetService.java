@@ -1,4 +1,4 @@
-package com.lucianaugusto.ladi.services;
+package com.services;
 
 public interface PetService {
 

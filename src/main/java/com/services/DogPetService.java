@@ -1,14 +1,14 @@
-package com.lucianaugusto.ladi.services;
+package com.services;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-@Profile("cat")
+@Profile({"dog", "default"})
 @Service("petService")
-public class CatPetService implements PetService {
+public class DogPetService implements PetService{
 	@Override
 	public String getPetType() {
 		// TODO Auto-generated method stub
-		return "Cats are the best!";
+		return "Dogs are the best!";
 	}
 }

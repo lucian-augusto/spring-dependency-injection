@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.lucianaugusto.ladi.services.ConstructorGreetingService;
+import com.services.ConstructorGreetingService;
 
 class ConstructorInjectionControllerTest {
 

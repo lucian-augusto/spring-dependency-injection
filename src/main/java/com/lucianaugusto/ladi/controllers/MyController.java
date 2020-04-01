@@ -2,7 +2,7 @@ package com.lucianaugusto.ladi.controllers;
 
 import org.springframework.stereotype.Controller;
 
-import com.lucianaugusto.ladi.services.GreetingService;
+import com.services.GreetingService;
 
 @Controller
 public class MyController {

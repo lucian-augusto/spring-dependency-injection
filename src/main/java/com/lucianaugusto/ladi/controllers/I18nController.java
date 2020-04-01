@@ -3,7 +3,7 @@ package com.lucianaugusto.ladi.controllers;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
-import com.lucianaugusto.ladi.services.GreetingService;
+import com.services.GreetingService;
 
 @Controller
 public class I18nController {

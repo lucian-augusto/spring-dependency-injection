@@ -1,4 +1,4 @@
-package com.lucianaugusto.ladi.services;
+package com.services;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
