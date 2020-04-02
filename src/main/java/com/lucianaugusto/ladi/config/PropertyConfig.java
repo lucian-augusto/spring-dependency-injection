@@ -1,10 +1,12 @@
 package com.lucianaugusto.ladi.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.core.env.Environment;
 
 import com.lucianaugusto.ladi.examplebeans.FakeDataSource;
 
@@ -13,6 +15,8 @@ import com.lucianaugusto.ladi.examplebeans.FakeDataSource;
 // datasource.properties file
 public class PropertyConfig {
 
+	@Autowired
+	Environment env;
 	//	Properties
 	@Value("${com.username}")
 	String user;
@@ -28,7 +32,7 @@ public class PropertyConfig {
 	public FakeDataSource fakeDataSource() { // Sets up the properties on the fakeDataSource. Asks the @Configuration to use
 		// a Spring expression language statement to get that value from the externalised properties
 		FakeDataSource fakeDataSource = new FakeDataSource();
-		fakeDataSource.setUser(user);
+		fakeDataSource.setUser(env.getProperty("USERNAME"));
 		fakeDataSource.setPassword(password);
 		fakeDataSource.setUrl(url);
 		return fakeDataSource;
