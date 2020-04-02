@@ -12,6 +12,7 @@ import com.lucianaugusto.ladi.controllers.PetController;
 import com.lucianaugusto.ladi.controllers.PropertyInjectionController;
 import com.lucianaugusto.ladi.controllers.SetterInjectionController;
 import com.lucianaugusto.ladi.examplebeans.FakeDataSource;
+import com.lucianaugusto.ladi.examplebeans.FakeJmsBroker;
 
 @SpringBootApplication // By default this annotations does a component scan of all the packages below itself 
 // (@SpringBootApplication). To add packages from outside this range, it's necessary to specify them using the 
@@ -56,6 +57,9 @@ public class LaDiApplication {
 		FakeDataSource fakeDataSource = (FakeDataSource) context.getBean(FakeDataSource.class);
 		System.out.println(fakeDataSource.getUser());
 
+		System.out.println("------ Fake JMS Broker");
+		FakeJmsBroker fakeJmsBroker = (FakeJmsBroker) context.getBean(FakeJmsBroker.class);
+		System.out.println(fakeJmsBroker.getUsername());
 
 	}
 
