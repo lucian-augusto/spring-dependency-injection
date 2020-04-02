@@ -15,16 +15,14 @@ import com.lucianaugusto.ladi.examplebeans.FakeJmsBroker;
 @Configuration
 //@PropertySource({"classpath:datasource.properties", "classpath:jms.properties"}) // Specifies that it should use the set of properties inside the
 //// datasource.properties file. It is possible to pass a list of property files to the @PropertySource Annotation
-@PropertySources({ // More recent (introduced in Spring 4) way of setting up multiple configuration property sources
-	// Provides a cleaner and better way to visualize all the property sources.
-	@PropertySource("classpath:datasource.properties"),
-	@PropertySource("classpath:jms.properties")
-})
+//@PropertySources({ // More recent (introduced in Spring 4) way of setting up multiple configuration property sources
+//	// Provides a cleaner and better way to visualize all the property sources.
+//	@PropertySource("classpath:datasource.properties"),
+//	@PropertySource("classpath:jms.properties")
+//})
 public class PropertyConfig {
 
 //	FakeDataSource Fields
-	@Autowired
-	Environment env;
 	@Value("${com.username}")
 	String user;
 	
@@ -49,7 +47,7 @@ public class PropertyConfig {
 	public FakeDataSource fakeDataSource() { // Sets up the properties on the fakeDataSource. Asks the @Configuration to use
 		// a Spring expression language statement to get that value from the externalised properties
 		FakeDataSource fakeDataSource = new FakeDataSource();
-		fakeDataSource.setUser(env.getProperty("USERNAME"));
+		fakeDataSource.setUser(user);
 		fakeDataSource.setPassword(password);
 		fakeDataSource.setUrl(url);
 		return fakeDataSource;
