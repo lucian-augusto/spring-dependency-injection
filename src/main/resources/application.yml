@@ -1,0 +1,8 @@
+# To Spring recognize this yaml file automatically, it must be called "application.yml".
+# In this file, we will be recreating the JMS service properties. 
+# Remember that the spacing is important for YAML files!
+com:
+  jms:
+    username: JMS Username
+    password: somepass
+    url: SomeURL
