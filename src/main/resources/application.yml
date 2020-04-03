@@ -6,3 +6,10 @@ com:
     username: JMS Username
     password: somepass
     url: SomeURL
+    
+---
+spring:
+  profiles: es
+com:
+  jms:
+    username: JMS Username +++ IN +++ Spanish
